@@ -6,6 +6,7 @@ class Solution:
 		self.stack2 = []
 	def push(self, node):
 		self.stack1.append(node)
+		# self.stack1.insert(0, node)
 	def pop(self):
 		#如果stack2已经有，直接pop
 		if self.stack2:
@@ -18,18 +19,3 @@ class Solution:
 			while self.stack1:
 				self.stack2.append(self.stack1.pop())
 			return self.stack2.pop()
-
-# 两个队列实现栈
-class Solution:
-	def __init__(self):
-		self.queue1 = []
-		self.queue2 = []
-	def push(self, node):
-		self.queue1.insert(0, node)
-	def pop(self):
-		if not self.queue1:
-			return None
-		while self.queue1:
-			self.queue2.insert(0, self.queue1.pop())
-		self.queue1, self.queue2 = self.queue2, self.queue1
-		return self.queue2.pop()
