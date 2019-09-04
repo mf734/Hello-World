@@ -15,7 +15,7 @@ class Solution:
 		if not listNode:
 			return 
 		ret = []
-		p = head
+		p = listNode
 		while p!= None:
 			ret.append(p.data)
 			p = p.next
