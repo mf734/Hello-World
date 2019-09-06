@@ -65,8 +65,8 @@ class Solution:
 		# 当前坐标和目标路径对应字符一样
 		# 没有被走过
 		if 0 <= x < cols and 0 <= y < rows \
-			and matrix[y*cols + x] == path[pathIndex] \
-			and not visited[y*cols + x]:
+		and matrix[y*cols + x] == path[pathIndex] \
+		and not visited[y*cols + x]:
 			visited[y*cols + x] = True
 			pathIndex += 1
 			curPath = self.hasPathCore(matrix, rows, cols, x-1, y, path, pathIndex, visited) \
