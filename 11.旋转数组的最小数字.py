@@ -11,12 +11,13 @@ class Solution:
 		if not nums or not isinstance(nums, list):
 			return
 		lo, mid, hi = 0, 0, len(nums)-1
-		# 因为旋转了，所以左边的数字应该比右边的大
+		# 因为旋转了，所以左边的数字理应比右边的大
 		while (nums[lo] >= nums[hi]):
 			if (hi - lo) == 1:
 				mid = hi
 				break
 			mid = lo + (hi - lo)//2
+			# 以下三句只是为了解决重复的数字
 			if nums[hi] == nums[lo] == nums[mid]:
 				mid = minV(nums, lo, hi)
 				break
